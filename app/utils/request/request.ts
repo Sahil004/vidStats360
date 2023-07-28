@@ -9,9 +9,6 @@ export async function _fetch<T>(
   // 'fetch' is a built-in JavaScript function for making HTTP requests
   const res = await fetch(input, {
     ...init,
-    next: {
-      revalidate: 1,
-    },
   });
 
   // Parse the response as JSON and cast it to ApiResponse<T>

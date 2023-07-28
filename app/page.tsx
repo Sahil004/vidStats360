@@ -17,30 +17,31 @@ import Aggregates from "./components/visualizations/Aggregates";
 import TableVis from "./components/visualizations/TableVis";
 import { viz_statics } from "./utils/statics/vizStatics";
 import Visualization from "./components/visualizations";
+import { getDashboardDataFromJSON } from "./utils/statics/dashboardData";
 
 export default async function Page(params: PageParams) {
-  const data = await _fetch<DashboardData>(
-    generateReqUrl(
-      `/api/get-dashboard-data${
-        Object.keys(params.searchParams ?? {})?.length > 0
-          ? `?${new URLSearchParams(params.searchParams ?? {}).toString()}`
-          : ""
-      }`,
-    ),
-  );
+  // api route not working nex 13 build
+  // const data = await _fetch<DashboardData>(
+  //   generateReqUrl(
+  //     `/api/get-dashboard-data${
+  //       Object.keys(params.searchParams ?? {})?.length > 0
+  //         ? `?${new URLSearchParams(params.searchParams ?? {}).toString()}`
+  //         : ""
+  //     }`,
+  //   ),
+  // );
+  const filter = params?.searchParams?.filter
+    ? JSON.parse(params.searchParams?.filter)
+    : 0;
+  // temp solution as currently next 13 faces self hosted api issue...
+  const data = getDashboardDataFromJSON(JSON.parse(filter ?? "") || 0);
 
   return (
     <main className="min-h-screen p-6 max-w-7xl m-auto">
-      <DateFilters
-        activeFilter={
-          params?.searchParams?.filter
-            ? JSON.parse(params.searchParams?.filter)
-            : 0
-        }
-      />
+      <DateFilters activeFilter={filter} />
       <div className="grid gap-5">
-        <Aggregates data={data.data} />
-        <Visualization data={data.data} />
+        <Aggregates data={data} />
+        <Visualization data={data} />
       </div>
     </main>
   );

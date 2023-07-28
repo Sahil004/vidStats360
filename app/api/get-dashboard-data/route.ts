@@ -7,7 +7,7 @@ import {
 import { DashboardData, PageParams } from "@/app/utils/types";
 
 // api to get dashboard data for a path with filter
-export async function GET(req: Request, params: PageParams) {
+export async function GET(req: Request) {
   let filterStr = req.url.includes("?")
     ? getQueryParamFromPath(req.url ?? "", "filter")
     : "0";
