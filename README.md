@@ -38,3 +38,14 @@ pnpm dev
 - Tailwind
 - HTML
 - CSS
+
+## Screenshot
+Desktop
+
+![Logo](https://res.cloudinary.com/dccekgoij/image/upload/v1690574990/Screenshot_2023-07-29_at_1.38.05_AM_m1fbyi.png)
+
+Mobile
+
+![Logo](https://res.cloudinary.com/dccekgoij/image/upload/w_350/v1690574989/Screenshot_2023-07-29_at_1.38.40_AM_phsle1.png)
+
+![Logo](https://res.cloudinary.com/dccekgoij/image/upload/w_350/v1690574989/Screenshot_2023-07-29_at_1.38.53_AM_nywe2x.png)
