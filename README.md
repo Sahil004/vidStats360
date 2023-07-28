@@ -1,7 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Vid Stats 360 Dashboard
 
-## Getting Started
+Vid Stats 360 is a dashboard homepage that provides users with a synopsis of video usage within their account on the platform. The dashboard displays various video transcoding metrics and offers time series graphs for each day's data. Users can filter the data for the last seven days, 14 days, and 30 days.
 
+## Backend API
+
+The backend API is built using Next.js server-side endpoints. It provides the necessary video usage data in JSON format to populate the dashboard. The API endpoint is located at `/api/get-dashboard-data` and returns the required data.
+
+## Frontend Dashboard
+
+The frontend dashboard is developed using React.js. It consists of the following components:
+
+- **Card Blocks:** Three card blocks that show the total usage of the entity.
+- **Daily Aggregation Charts:** Three charts that display the daily aggregation of video transcoding metrics:
+  - Streaming Usage (seconds)
+  - Transcoding Usage (seconds)
+  - Storage Usage (seconds)
+- **Top Asset Table:** A table that lists the top assets based on usage.
+
+## Installation
 First, run the development server:
 
 ```bash
@@ -11,15 +27,14 @@ yarn dev
 # or
 pnpm dev
 ```
+## Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-
-fully dynamic dashboard
-filters from mock backend
-graphs from mock backend
-time seconds to milliseconds
+- React
+- NextJS 13
+- Chart.js
+- react-chartjs-2
+- TypeScript
+- moment
+- Tailwind
+- HTML
+- CSS

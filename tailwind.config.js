@@ -8,9 +8,9 @@ module.exports = {
       colors: {
         primary: '#0070f3',
         secondary: '#CE55FF',
-        cardBgColor: "rgb(var(--card-background))",
-        bodyBg: "rgb(var(--background-end-rgb))",
-        lightText: 'rgb(var(--light-foreground-rgb))'
+        "card-bg-color": "rgb(var(--card-background))",
+        "body-bg": "rgb(var(--background-end-rgb))",
+        "light-text": 'rgb(var(--light-foreground-rgb))'
       },
     },
   },
